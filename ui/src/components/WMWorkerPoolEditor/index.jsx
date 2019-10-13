@@ -296,6 +296,11 @@ export default class WMWorkerPoolEditor extends Component {
       onDialogActionComplete,
     } = this.props;
     const { workerPool, error, actionLoading, validation } = this.state;
+    const options = {
+      extraKeys: {
+        Tab: false,
+      },
+    };
 
     return (
       <Fragment>
@@ -397,6 +402,7 @@ export default class WMWorkerPoolEditor extends Component {
               value={JSON.stringify(workerPool.config, null, 2)}
               onChange={this.handleEditorChange}
               lint
+              options={options}
             />
           </ListItem>
 
